@@ -1,6 +1,6 @@
 {
   "name": "tcp-tester",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TCP Tester",
   "main": "main.js",
   "scripts": {
