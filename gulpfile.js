@@ -41,9 +41,14 @@ gulp.task('relase_clean', function () {
     return gulp.src([tempDir, relaseDir], {read: false}).pipe(clean())
 })
 
-gulp.task('relase_copy', ['build', 'relase_clean'], function(cb){
+gulp.task('relase_copy', ['relase_dist_copy'], function(cb){
+    gulp.src([`./index.html`, './main.js', './package.json', 'style.css'])
+        .pipe(gulp.dest(tempDir)).on('end', cb)
+})
+
+gulp.task('relase_dist_copy', ['build', 'relase_clean'], function(cb){
     fs.mkdir(tempDir, ()=>{
-        gulp.src([`./dist`, `./index.html`, './main.js', './package.json', 'style.css'])
+        gulp.src([`${distDir}/**/*`], {base: './'})
             .pipe(gulp.dest(tempDir)).on('end', cb)
     })
 })
