@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>TCP Testerr</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <section>
+            <h1>server test</h1>
+            <div>
+                <span>IP: <span id="ip"></span></span>
+            </div>
+            <div>
+                <span>port: <input type="number" id="port" min="3000" max="9999" value="9393" ></span>
+            </div>
+            <div id="serverRestart" class="button">TCP Server Restart</div>
+            <div id="serverStart" class="button">TCP Server Start</div>
+            <div id="serverStop" class="button">TCP Server Stop</div>
+        </section>
+
+        <section>
+            <input id="serverData" type="text" placeholder="보낼 데이터" />
+            <div id="serverSend" class="button">send</div>
+        </section>
+
+        <section>
+            <h1>client test</h1>
+            <div>
+                <span>IP: <input type="text" id="clientIp" value="127.0.0.1" /></span>
+            </div>
+            <div>
+                <span>port: <input type="number" id="clientPort" min="3000" max="9999" value="9393" ></span>
+            </div>
+            <div id="clientConnect" class="button">connect</div>
+            <div id="clientDisconnect" class="button">disconnect</div>
+            <input id="clientData" type="text" placeholder="보낼 데이터" />
+            <div id="clientSend" class="button">send</div>
+        </section>
+
+        <section>
+            <div>log</div>
+            <div id="logContainer">
+
+            </div>
+            <div id="logClear" class="button">clear</div>
+        </section>
+    </body>
+
+    <script>
+        // You can also require other files to run in this process
+        require('./dist/server.js')
+        require('./dist/client.js')
+    </script>
+</html>
