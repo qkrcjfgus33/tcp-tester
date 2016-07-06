@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron main.js",
     "build": "gulp build",
-    "build": "gulp relase"
+    "relase": "gulp relase"
   },
   "repository": {
     "type": "git",
